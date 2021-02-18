@@ -351,3 +351,5 @@ MigrationBackup/
 
 # Database Snapshot
 /FilmsCatalog/Migrations/ApplicationDbContextModelSnapshot.cs
+
+.vscode
