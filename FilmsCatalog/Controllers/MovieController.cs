@@ -123,6 +123,8 @@ namespace FilmsCatalog.Controllers
             var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var extension = IO.Path.GetExtension(image.FileName);
             var fileName = $"{timestamp}{extension}";
+            var directory = IO.Path.Combine(_environment.WebRootPath, "Posters");
+            IO.Directory.CreateDirectory(directory);
             var filePath = IO.Path.Combine("Posters",fileName);
             var localPath = IO.Path.Combine(_environment.WebRootPath, filePath);
             using var stream = IO.File.Open(localPath, IO.FileMode.OpenOrCreate);

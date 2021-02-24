@@ -355,3 +355,4 @@ MigrationBackup/
 .vscode
 
 FilmsCatalog/FilmsCatalog.db
+FilmsCatalog/wwwroot/Posters/*
