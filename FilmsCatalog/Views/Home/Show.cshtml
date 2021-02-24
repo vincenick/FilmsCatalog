@@ -1,0 +1,25 @@
+@model MovieViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+        <img src=@Model.PosterPath alt="Poster">
+    </div>
+    <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">@Model.Title @Model.Director</h4>
+        <p>@Model.ReleaseDate by @Model.Owner</p>
+        <p class="mb-3">@Model.Description</p>
+    </div>
+</div>
+@if(Model.IsEditable)
+{
+    <a
+        class="btn btn-primary"
+        asp-controller="Movies"
+        asp-action="Edit"
+        asp-route-id=@Model.Id>
+        Edit
+    </a>
+}
